@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_050248) do
+ActiveRecord::Schema.define(version: 2021_02_19_050434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2021_02_19_050248) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "assignment_id", null: false
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["assignment_id"], name: "index_tasks_on_assignment_id"
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.bigint "customer_id", null: false
     t.string "brand"
@@ -44,5 +53,6 @@ ActiveRecord::Schema.define(version: 2021_02_19_050248) do
   end
 
   add_foreign_key "assignments", "vehicles"
+  add_foreign_key "tasks", "assignments"
   add_foreign_key "vehicles", "customers"
 end
