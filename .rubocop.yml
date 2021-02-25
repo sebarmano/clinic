@@ -1,0 +1,28 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRailsVersion: 6.1.2
+  TargetRubyVersion: 2.7.2
+  UseCache: true
+  CacheRootDirectory: tmp/cache
+  MaxFilesInCache: 20000
+  Exclude:
+    - ".git/**/*"
+    - "app/assets/**/*"
+    - "app/javascript/**/*"
+    - "bin/*"
+    - "config/*.yml"
+    - "coverage/**/*"
+    - "db/migrate/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "**/**/schema.rb"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
