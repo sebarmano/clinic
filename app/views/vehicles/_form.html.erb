@@ -1,42 +1,44 @@
-<%= form_with(model: vehicle) do |form| %>
-  <% if vehicle.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+<%= turbo_frame_tag "new_vehicle" do %>
+  <%= form_with(model: vehicle) do |form| %>
+    <% if vehicle.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
 
-      <ul>
-        <% vehicle.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% vehicle.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :customer_id %>
+      <%= form.text_field :customer_id %>
+    </div>
+
+    <div class="field">
+      <%= form.label :brand %>
+      <%= form.text_field :brand %>
+    </div>
+
+    <div class="field">
+      <%= form.label :model %>
+      <%= form.text_field :model %>
+    </div>
+
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.text_field :year %>
+    </div>
+
+    <div class="field">
+      <%= form.label :plate %>
+      <%= form.text_field :plate %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.text_field :customer_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_field :brand %>
-  </div>
-
-  <div class="field">
-    <%= form.label :model %>
-    <%= form.text_field :model %>
-  </div>
-
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.text_field :year %>
-  </div>
-
-  <div class="field">
-    <%= form.label :plate %>
-    <%= form.text_field :plate %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

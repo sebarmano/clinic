@@ -27,3 +27,18 @@
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
+
+<%= turbo_stream_from "vehicles" %>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-md">
+  <ul class="divide-y divide-gray-200">
+    <%= turbo_frame_tag "vehicles" do %>
+      <%= render @vehicles %>
+    <% end %>
+  </ul>
+</div>
+<br>
+
+<%= turbo_frame_tag "new_vehicle" do %>
+  <%= link_to 'New Vehicle', new_vehicle_path %>
+<% end %>

@@ -1,0 +1,10 @@
+<li class="grid grid-flow-col">
+  <div><%= vehicle.customer_id %></div>
+  <div><%= vehicle.brand %></div>
+  <div><%= vehicle.model %></div>
+  <div><%= vehicle.year %></div>
+  <div><%= vehicle.plate %></div>
+  <div><%= link_to 'Show', vehicle %></div>
+  <div><%= link_to 'Edit', edit_vehicle_path(vehicle) %></div>
+  <div><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+</li>

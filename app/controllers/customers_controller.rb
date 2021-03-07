@@ -6,6 +6,7 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @vehicles = @customer.vehicles
   end
 
   def new
