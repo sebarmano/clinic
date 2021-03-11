@@ -12,12 +12,7 @@
 
   <tbody>
     <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= assignment.vehicle_id %></td>
-        <td><%= link_to 'Show', assignment %></td>
-        <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-        <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render "assignment" %>
     <% end %>
   </tbody>
 </table>

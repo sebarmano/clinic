@@ -27,3 +27,18 @@
 
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', vehicles_path %>
+
+<%= turbo_stream_from "assignments" %>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-md">
+  <ul class="divide-y divide-gray-200">
+    <%= turbo_frame_tag "assignments" do %>
+      <%= render @assignments %>
+    <% end %>
+  </ul>
+</div>
+<br>
+
+<%= turbo_frame_tag "new_assignment" do %>
+  <%= link_to 'New Assigment', new_assignment_path %>
+<% end %>

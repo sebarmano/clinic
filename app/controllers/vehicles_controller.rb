@@ -8,6 +8,8 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/1 or /vehicles/1.json
   def show
+    session[:current_vehicle_id] = @vehicle.id
+    @assignments = @vehicle.assignments
   end
 
   # GET /vehicles/new
