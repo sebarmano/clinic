@@ -11,12 +11,9 @@
   </thead>
 
   <tbody>
-    <% @assignments.each do |assignment| %>
-      <%= render "assignment" %>
-    <% end %>
+    <%= render @assignments %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Assignment', new_assignment_path %>

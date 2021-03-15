@@ -8,6 +8,8 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1 or /assignments/1.json
   def show
+    session[:current_assignment_id] = @assignment.id
+    @tasks = @assignment.tasks
   end
 
   # GET /assignments/new
@@ -21,16 +23,12 @@ class AssignmentsController < ApplicationController
 
   # POST /assignments or /assignments.json
   def create
-    @assignment = Assignment.new(assignment_params)
+    @assignment = current_vehicle.assignments.new(assignment_params)
 
-    respond_to do |format|
-      if @assignment.save
-        format.html { redirect_to @assignment, notice: "Assignment was successfully created." }
-        format.json { render :show, status: :created, location: @assignment }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @assignment.errors, status: :unprocessable_entity }
-      end
+    if @assignment.save
+      redirect_to vehicle_path(current_vehicle), notice: "Assignment was successfully created."
+    else
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
 
@@ -57,13 +55,16 @@ class AssignmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_assignment
-      @assignment = Assignment.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def assignment_params
-      params.require(:assignment).permit(:vehicle_id)
-    end
+  def set_assignment
+    @assignment = Assignment.find(params[:id])
+  end
+
+  def assignment_params
+    params.require(:assignment).permit(:description)
+  end
+
+  def current_vehicle
+    Vehicle.find(session[:current_vehicle_id])
+  end
 end

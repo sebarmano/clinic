@@ -1,0 +1,8 @@
+<li class="grid grid-flow-col">
+  <div><%= task.assignment_id %></div>
+  <div><%= task.name %></div>
+  <div><%= task.description %></div>
+  <div><%= link_to 'Show', task %></div>
+  <div><%= link_to 'Edit', edit_task_path(task) %></div>
+  <div><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+</li>

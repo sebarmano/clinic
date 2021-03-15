@@ -7,3 +7,18 @@
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>
+
+<%= turbo_stream_from "tasks" %>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-md">
+  <ul class="divide-y divide-gray-200">
+    <%= turbo_frame_tag "tasks" do %>
+      <%= render @tasks %>
+    <% end %>
+  </ul>
+</div>
+<br>
+
+<%= turbo_frame_tag "new_task" do %>
+  <%= link_to 'New Task', new_task_path %>
+<% end %>
