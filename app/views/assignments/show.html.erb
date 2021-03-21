@@ -4,6 +4,11 @@
   <strong>Vehicle:</strong>
   <%= @assignment.vehicle_id %>
 </p>
+<p>
+  <strong>Trabajo:</strong>
+  <%= @assignment.description %>
+</p>
+
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>

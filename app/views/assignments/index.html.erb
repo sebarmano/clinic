@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Assignments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Vehicle</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @assignments %>
-  </tbody>
-</table>
+<ul><%= render @assignments %></ul>
 <br>
 
 <%= link_to 'New Assignment', new_assignment_path %>

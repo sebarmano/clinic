@@ -1,7 +1,7 @@
-<div>
+<li class="grid grid-flow-col">
   <div><%= assignment.vehicle_id %></div>
   <div><%= assignment.description %></div>
-  <div><%= link_to 'Show', assignment %></div>
+  <div><%= link_to 'Show', assignment, "data-turbo-frame": "_top" %></div>
   <div><%= link_to 'Edit', edit_assignment_path(assignment) %></div>
   <div><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-</div>
+</li>
