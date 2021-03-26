@@ -4,7 +4,7 @@
   <div><%= vehicle.model %></div>
   <div><%= vehicle.year %></div>
   <div><%= vehicle.plate %></div>
-  <div><%= link_to 'Show', vehicle, "data-turbo-frame": "_top" %></div>
-  <div><%= link_to 'Edit', edit_vehicle_path(vehicle) %></div>
-  <div><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <div><%= link_to 'Ver detalles', vehicle, "data-turbo-frame": "_top" %></div>
+  <div><%= link_to 'Editar', edit_vehicle_path(vehicle) %></div>
+  <div><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Esta seguro?' } %></div>
 </li>
