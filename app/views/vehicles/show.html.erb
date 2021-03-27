@@ -1,32 +1,40 @@
+<h2>Detalles del Vehículo</h2>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @vehicle.customer_id %>
-</p>
+<%= link_to "Volver", customer_path(@vehicle.customer) %>
 
 <p>
-  <strong>Brand:</strong>
+  <strong>Marca:</strong>
   <%= @vehicle.brand %>
 </p>
 
 <p>
-  <strong>Model:</strong>
+  <strong>Modelo:</strong>
   <%= @vehicle.model %>
 </p>
 
 <p>
-  <strong>Year:</strong>
+  <strong>Año:</strong>
   <%= @vehicle.year %>
 </p>
 
 <p>
-  <strong>Plate:</strong>
+  <strong>Patente:</strong>
   <%= @vehicle.plate %>
 </p>
 
-<%= link_to 'Editar', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', vehicles_path %>
+<p>
+  <strong>Color:</strong>
+  <%= @vehicle.color %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @vehicle.customer.full_name %>
+</p>
+
+<h3>Trabajos</h3>
 
 <%= turbo_stream_from "assignments" %>
 
@@ -40,5 +48,5 @@
 <br>
 
 <%= turbo_frame_tag "new_assignment" do %>
-  <%= link_to 'New Assigment', new_assignment_path %>
+  <%= link_to "Nuevo Trabajo", new_assignment_path %>
 <% end %>

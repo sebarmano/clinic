@@ -5,4 +5,8 @@ class Vehicle < ApplicationRecord
   validates :brand, :plate, presence: true
 
   after_create_commit { broadcast_append_to "vehicles" }
+
+  def description
+    "#{brand} #{model} #{color} (#{plate})"
+  end
 end

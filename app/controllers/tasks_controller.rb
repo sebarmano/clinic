@@ -1,25 +1,20 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
-  # GET /tasks or /tasks.json
   def index
     @tasks = Task.all
   end
 
-  # GET /tasks/1 or /tasks/1.json
   def show
   end
 
-  # GET /tasks/new
   def new
     @task = Task.new
   end
 
-  # GET /tasks/1/edit
   def edit
   end
 
-  # POST /tasks or /tasks.json
   def create
     @task = current_assignment.tasks.new(task_params)
 
@@ -30,22 +25,17 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
     if @task.update(task_params)
-      redirect_to @task, notice: "Task was successfully updated."
+      redirect_to assignment_path(current_assignment), notice: "Tarea actualizada."
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
-  # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
-    respond_to do |format|
-      format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to assignment_task(current_assignment), notice: "Se eliminó la tarea."
   end
 
   private

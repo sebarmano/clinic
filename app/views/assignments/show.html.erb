@@ -1,17 +1,19 @@
+<h2>Detalles del Trabajo</h2>
+
 <p id="notice"><%= notice %></p>
+
+<%= link_to "Volver", customer_path(@assignment.vehicle) %>
 
 <p>
   <strong>Vehicle:</strong>
-  <%= @assignment.vehicle_id %>
+  <%= @assignment.vehicle.description %>
 </p>
 <p>
   <strong>Trabajo:</strong>
   <%= @assignment.description %>
 </p>
 
-
-<%= link_to 'Editar', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %>
+<h3>Tareas</h3>
 
 <%= turbo_stream_from "tasks" %>
 
@@ -25,5 +27,5 @@
 <br>
 
 <%= turbo_frame_tag "new_task" do %>
-  <%= link_to 'New Task', new_task_path %>
+  <%= link_to "Nueva Tarea", new_task_path %>
 <% end %>

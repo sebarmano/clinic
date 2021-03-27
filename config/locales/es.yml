@@ -1,6 +1,37 @@
 ---
 es:
   activerecord:
+    attributes:
+      assignment:
+        description: Descripción
+      customer:
+        address: Dirección
+        email: Email
+        first_name: Nombre
+        last_name: Apellido
+        phone: Teléfono
+      task:
+        description: Descripción
+        name: Nombre
+      vehicle:
+        brand: Marca
+        color: Color
+        model: Modelo
+        plate: Patente
+        year: Año
+    models:
+      assignment:
+        one: Trabajo
+        other: Trabajos
+      customer:
+        one: Cliente
+        other: Clientes
+      task:
+        one: Tarea
+        other: Tareas
+      vehicle:
+        one: Vehiculo
+        other: Vehiculos
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'

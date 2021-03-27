@@ -1,17 +1,21 @@
+<h2>Detalles del Cliente</h2>
+
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Volver", customers_path %>
+
 <p>
-  <strong>First name:</strong>
+  <strong>Nombre:</strong>
   <%= @customer.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong>Apellido:</strong>
   <%= @customer.last_name %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Telefono:</strong>
   <%= @customer.phone %>
 </p>
 
@@ -21,12 +25,11 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Direccion:</strong>
   <%= @customer.address %>
 </p>
 
-<%= link_to 'Editar', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<h3>Vehiculos</h3>
 
 <%= turbo_stream_from "vehicles" %>
 
@@ -40,5 +43,5 @@
 <br>
 
 <%= turbo_frame_tag "new_vehicle" do %>
-  <%= link_to 'New Vehicle', new_vehicle_path %>
+  <%= link_to "Nuevo Vehiculo", new_vehicle_path %>
 <% end %>
