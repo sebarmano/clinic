@@ -1,6 +1,8 @@
 <li class="grid grid-flow-col">
   <div><%= task.name %></div>
   <div><%= task.description %></div>
+  <div><%= l(task.date_on) if task.date_on.present? %></div>
   <div><%= link_to 'Editar', edit_task_path(task), "data-turbo-frame": "_top" %></div>
   <div><%= link_to 'Eliminar', task, method: :delete, data: { confirm: 'Esta seguro?' } %></div>
+</p>
 </li>

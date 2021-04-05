@@ -11,6 +11,7 @@ es:
         last_name: Apellido
         phone: Teléfono
       task:
+        date_on: Fecha
         description: Descripción
         name: Nombre
       vehicle:
