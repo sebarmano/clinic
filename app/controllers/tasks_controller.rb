@@ -35,7 +35,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to assignment_task(current_assignment), notice: "Se eliminó la tarea."
+    redirect_to assignment_path(current_assignment), notice: "Se eliminó la tarea."
   end
 
   private
