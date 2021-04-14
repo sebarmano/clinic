@@ -1,34 +1,37 @@
-<%= turbo_frame_tag "new_task" do %>
-  <%= form_with(model: task) do |form| %>
-    <% if task.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-        <ul>
-          <% task.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description %>
-    </div>
-
-    <div class="field">
-      <%= form.label :date_on %>
-      <%= form.date_field :date_on, value: Time.zone.today %>
-    </div>
-
-    <div class="actions">
-      <%= form.submit %>
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_on %>
+    <%= form.date_field :date_on, value: Time.zone.today %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>

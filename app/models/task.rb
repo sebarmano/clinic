@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :assignment
+  monetize :price_cents
 
   validates :name, presence: true
 
