@@ -2,7 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Volver", customer_path(@assignment.vehicle) %>
+<%= link_to "Volver", vehicle_path(@assignment.vehicle) %>
 
 <p>
   <strong>Vehículo:</strong>
@@ -11,6 +11,10 @@
 <p>
   <strong>Trabajo:</strong>
   <%= @assignment.description %>
+</p>
+<p>
+  <strong>Trabajo:</strong>
+  $ <%= @assignment.total_price %>
 </p>
 
 <h3>Tareas</h3>
