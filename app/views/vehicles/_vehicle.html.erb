@@ -5,6 +5,5 @@
   <div><%= vehicle.plate %></div>
   <div><%= vehicle.color %></div>
   <div><%= link_to 'Ver detalles', vehicle, "data-turbo-frame": "_top" %></div>
-  <div><%= link_to 'Editar', edit_vehicle_path(vehicle), "data-turbo-frame": "_top" %></div>
   <div><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Esta seguro?' } %></div>
 </li>

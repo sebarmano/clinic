@@ -1,8 +1,8 @@
+<%= link_to "Volver", customers_path %>
+
 <h2>Detalles del Cliente</h2>
 
 <p id="notice"><%= notice %></p>
-
-<%= link_to "Volver", customers_path %>
 
 <p>
   <strong>Nombre:</strong>
@@ -28,6 +28,8 @@
   <strong>Direccion:</strong>
   <%= @customer.address %>
 </p>
+
+<div><%= link_to 'Editar', edit_customer_path(@customer) %></div>
 
 <h3>Vehiculos</h3>
 

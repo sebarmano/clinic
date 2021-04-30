@@ -14,8 +14,7 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @vehicle = current_customer.vehicles.new(vehicle_params)
@@ -29,7 +28,7 @@ class VehiclesController < ApplicationController
 
   def update
     if @vehicle.update(vehicle_params)
-      redirect_to customer_path(current_customer), notice: "Vehículo actualizado."
+      redirect_to @vehicle, notice: "Vehículo actualizado."
     else
       render :edit, status: :unprocessable_entity
     end
