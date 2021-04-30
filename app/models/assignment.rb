@@ -1,6 +1,7 @@
 class Assignment < ApplicationRecord
   belongs_to :vehicle
   has_many :tasks, dependent: :destroy
+  has_many :payments, dependent: :destroy
 
   validates :description, presence: true
 
