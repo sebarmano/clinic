@@ -12,7 +12,27 @@
   </head>
 
   <body>
-    <%= render "shared/sidebar" %>
+    <div class="h-screen flex overflow-hidden bg-gray-100">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+
+      <%= render "shared/mobile_sidebar" %>
+      <%= render "shared/desktop_sidebar" %>
+
+      <div class="flex flex-col w-0 flex-1 overflow-hidden">
+        <%= render "shared/top_bar" %>
+
+        <main class="flex-1 relative overflow-y-auto focus:outline-none">
+          <div class="py-6">
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    </div>
+
     <div class="container mx-auto prose">
       <% if signed_in? %>
         <%= current_user.email %>
@@ -21,13 +41,5 @@
         <%= link_to "Ingresar", sign_in_path %>
       <% end %>
     </div>
-
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
-
-    <%= yield %>
   </body>
 </html>

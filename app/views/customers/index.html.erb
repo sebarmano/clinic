@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Clientes</h1>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+  <h1 class="text-2xl font-semibold text-gray-900">Clientes</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Telefono</th>
-      <th>Email</th>
-      <th>Direccion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @customers.each do |customer| %>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+  <table>
+    <thead>
       <tr>
-        <td><%= customer.first_name %></td>
-        <td><%= customer.last_name %></td>
-        <td><%= customer.phone %></td>
-        <td><%= customer.email %></td>
-        <td><%= customer.address %></td>
-        <td><%= link_to 'Ver detalles', customer %></td>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Email</th>
+        <th>Direccion</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.first_name %></td>
+          <td><%= customer.last_name %></td>
+          <td><%= customer.phone %></td>
+          <td><%= customer.email %></td>
+          <td><%= customer.address %></td>
+          <td><%= link_to 'Ver detalles', customer %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Nuevo Cliente', new_customer_path %>
+  <br>
+
+  <%= link_to 'Nuevo Cliente', new_customer_path %>
+</div>
