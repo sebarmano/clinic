@@ -12,6 +12,10 @@ module Clinic
     config.i18n.default_locale = :es
     config.load_defaults 6.1
 
+    config.to_prepare do
+      Clearance::SessionsController.layout "authentication"
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
